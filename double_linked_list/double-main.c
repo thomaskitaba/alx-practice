@@ -26,7 +26,6 @@ print_list(&head); /*TODO: print 1*/
 printf("--------------------------\n");
 
 printf("--------------------------\n");
-
 free_node(&head);
 return (0);
 }

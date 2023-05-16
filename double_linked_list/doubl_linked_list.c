@@ -42,14 +42,15 @@ node *insert_node_middle(node **head, int idx, int num)
 {
     node *list, *current, *Next;
     int i;
-    list = NULL;
+    list = current = Next = NULL;
+    i = 0;
     if (head == NULL)
     {
         printf("INFO: empty node");
         return (NULL);
     }
     current = Next = *head;
-    i = 0;
+
     /*if (idx == 0)
     {
         *head = insert_node_start(head, num);
