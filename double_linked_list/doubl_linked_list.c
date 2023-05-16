@@ -42,6 +42,8 @@ node *insert_node_middle(node **head, int idx, int num)
 {
     node *list, *current, *Next;
     int i;
+    list = NULL;
+
     current = Next = *head;
     i = 0;
     if (idx == 0)
@@ -51,12 +53,6 @@ node *insert_node_middle(node **head, int idx, int num)
         return (*head);
     }
 
-    /*check if malloc was succesfull*/
-    if (list == NULL)
-    {
-        printf("ERROR: malloc was unsuccessful");
-        return NULL;
-    }
 
     /*loop accros the node and find the index*/
     while(i < idx)
@@ -72,6 +68,12 @@ node *insert_node_middle(node **head, int idx, int num)
         return (*head);
     }
     list = (node *)malloc(sizeof(node));
+    /*check if malloc was succesfull*/
+    if (list == NULL)
+    {
+        printf("ERROR: malloc was unsuccessful");
+        return NULL;
+    }
     list->n = num;
     current->next = list;
     list->next = Next;
