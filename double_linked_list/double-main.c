@@ -31,7 +31,7 @@ printf("--------------------------\n");
 
 
 insert_node_end(&head, number);
-printf("node with value: %d inserted at the START and END of the node :\n", number);
+printf("node with value: %d inserted at the START and END of the node :\n\n", number);
 
 print_list(&head); /*TODO: print 1*/
 
@@ -43,7 +43,7 @@ scanf("%d", &index);
 
 insert_node_middle(&head, index, number);
 
-printf("\nnode with value: %d inserted at Index %d :\n", number, index);
+printf("\nnode with value: %d inserted at Index %d :\n\n", number, index);
 print_list(&head); /*TODO: print 1*/
 printf("--------------------------\n");
 
