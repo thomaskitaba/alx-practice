@@ -38,7 +38,7 @@ node *insert_node_start(node **head, int num)
     return (*head);
 }
 /*-----------------------------------------------------------------*/
-node *insert_node_middle(node **head, int idx, int num)
+/*node *insert_node_middle(node **head, int idx, int num)
 {
     node *list, *current, *Next;
     int i;
@@ -84,7 +84,7 @@ node *insert_node_middle(node **head, int idx, int num)
     Next->prev = list;
     list->prev =current;
 
-}
+} */
 /*-----------------------------------------------------------------*/
 node *insert_node_end(node **head, int num)
 {
