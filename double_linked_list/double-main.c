@@ -36,8 +36,11 @@ print_list(&head); /*TODO: print 1*/
 
 printf("--------------------------\n");
 printf("assuming the first node is index 0 : ");
-printf("To insert node at a given location provide Index:\n");
-printf("Index: ");
+printf("To insert node at a given location provide Number and Index:\n");
+
+printf("Number: ");
+scanf("%d", &number);
+printf("\nIndex: ");
 scanf("%d", &index);
 
 
