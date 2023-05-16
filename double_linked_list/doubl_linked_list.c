@@ -60,10 +60,7 @@ node *insert_node_middle(node **head, int idx, int num)
         i++;
         Next = current->next;
         /*check if idx is outof range*/
-
-        /*this will help us print on the last node if index
-        is greater than */
-        if (Next == NULL && idx > i)
+        if (Next == NULL)
     {
         /*head = insert_node_end(&(*head), num);*/
         current->next = list;
