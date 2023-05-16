@@ -50,7 +50,6 @@ node *insert_node_middle(node **head, int idx, int num)
         return (NULL);
     }
     current = Next = *head;
-
     /*if (idx == 0)
     {
         *head = insert_node_start(head, num);
@@ -58,8 +57,6 @@ node *insert_node_middle(node **head, int idx, int num)
         return (*head);
     }
     */
-
-
     /*loop accros the node and find the index*/
     while(i < idx)
     {
