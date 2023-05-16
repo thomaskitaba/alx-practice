@@ -85,7 +85,7 @@ node *insert_node_middle(node **head, int idx, int num)
     list->prev =current;
 
     return (*head);
-} */
+}
 /*-----------------------------------------------------------------*/
 node *insert_node_end(node **head, int num)
 {
