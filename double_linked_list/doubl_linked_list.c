@@ -129,12 +129,12 @@ node *current, *Next;
 int j;
 j = 0;
 
-current = Next = *head;
 if (!*head)
 {
     printf("INFO: Nothing to free");
     return;
 }
+current = Next = *head;
 while (Next)
 {
     j++;
