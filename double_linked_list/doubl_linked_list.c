@@ -43,7 +43,11 @@ node *insert_node_middle(node **head, int idx, int num)
     node *list, *current, *Next;
     int i;
     list = NULL;
-
+    if (head == NULL)
+    {
+        printf("INFO: empty node");
+        return (NULL);
+    }
     current = Next = *head;
     i = 0;
     if (idx == 0)
