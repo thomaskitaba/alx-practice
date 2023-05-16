@@ -60,12 +60,20 @@ node *insert_node_middle(node **head, int idx, int num)
         i++;
         Next = current->next;
         /*check if idx is outof range*/
-    }
-    if (Next == NULL)
+
+        /*this will help us print on the last node if index
+        is greater than (number of node - 1)*/
+        if (Next == NULL)
     {
-        *head = insert_node_end(&(*head), num);
+        /*head = insert_node_end(&(*head), num);*/
+        current->next = list;
+        list->n = num;
+        list->next = NULL;
+        list->prev = current;
         return (*head);
     }
+    }
+
     list = (node *)malloc(sizeof(node));
     /*check if malloc was succesfull*/
     if (list == NULL)
