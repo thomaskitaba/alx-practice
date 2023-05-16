@@ -61,7 +61,6 @@ node *insert_node_middle(node **head, int idx, int num)
         Next = current->next;
         /*check if idx is outof range*/
     }
-
     if (Next == NULL)
     {
         *head = insert_node_end(&(*head), num);
@@ -80,7 +79,7 @@ node *insert_node_middle(node **head, int idx, int num)
     Next->prev = list;
     list->prev =current;
 
-    return (*head);
+
 }
 /*-----------------------------------------------------------------*/
 node *insert_node_end(node **head, int num)
