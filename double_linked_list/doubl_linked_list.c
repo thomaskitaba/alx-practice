@@ -68,7 +68,7 @@ node *insert_node_middle(node **head, int idx, int num)
     }
     if (Next == NULL)
     {
-           *head = insert_node_end(head, num);
+        *head = insert_node_end(&(*head), num);
         return (*head);
     }
     list = (node *)malloc(sizeof(node));
