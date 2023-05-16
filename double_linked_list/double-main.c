@@ -29,7 +29,6 @@ insert_node_start(&head, number);
 
 printf("--------------------------\n");
 
-
 insert_node_end(&head, number);
 printf("node with value: %d inserted at the START and END of the node :\n\n", number);
 
@@ -38,7 +37,7 @@ print_list(&head); /*TODO: print 1*/
 printf("--------------------------\n");
 printf("assuming the first node is index 0 : ");
 printf("To insert node at a given location provide Index:\n");
-
+printf("Index: ");
 scanf("%d", &index);
 
 
