@@ -1,9 +1,6 @@
 #include "main.h"
 
-node *add_node(node **head, int num)
-{
 
-}
 /*-----------------------------------------------------------------*/
 node *create_node(node **head, int num)
 {
@@ -42,7 +39,7 @@ node *insert_node_middle(node **head, int idx, int num)
 {
     node *list, *current, *Next;
     int i;
-    list = current = Next = NULL;
+    /*list = current = Next = NULL;*/
     i = 0;
     if (head == NULL)
     {
