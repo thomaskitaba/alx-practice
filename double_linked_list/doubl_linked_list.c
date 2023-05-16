@@ -64,7 +64,7 @@ node *insert_node_middle(node **head, int idx, int num)
         /*this will help us print on the last node if index
         is greater than (number of node - 1)*/
         if (Next == NULL)
-    {
+        {
         /*head = insert_node_end(&(*head), num);*/
         current->next = list;
         list->n = num;

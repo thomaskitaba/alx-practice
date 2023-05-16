@@ -37,12 +37,10 @@ print_list(&head); /*TODO: print 1*/
 
 printf("--------------------------\n");
 printf("assuming the first node is index 0 : \n");
-printf("To insert node at a given location provide number and Index:\n");
-printf("Enter number: ");
-scanf("%d", &number);
-printf("Enter Index: \n");
+printf("To insert node at a given location provide Index:\n");
 
 scanf("%d", &index);
+
 
 insert_node_middle(&head, index, number);
 
