@@ -126,7 +126,8 @@ void free_node(node **head)
 node *current, *Next;
 int j;
 j = 0;
-current = *head;
+
+current = Next = *head;
 if (!*head)
 {
     printf("INFO: Nothing to free");
