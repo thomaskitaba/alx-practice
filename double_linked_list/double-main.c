@@ -21,7 +21,7 @@ printf("--------------------------\n");
 printf("--------------------------\n");
 printf("insert_node at the a given index :\n");
 printf("assuming the first node is index 0 :\n");
-/*insert_node_middle(&head, 6, 54);*/
+insert_node_middle(&head, 6, 54);
 print_list(&head); /*TODO: print 1*/
 printf("--------------------------\n");
 

@@ -60,9 +60,15 @@ node *insert_node_middle(node **head, int idx, int num)
     /*loop accros the node and find the index*/
     while(i < idx)
     {
+
         current = Next;
         i++;
         Next = current->next;
+        if (Next == NULL)
+        {
+            *head = insert_node_end(&(*head), num);
+            return (*head);
+        }
         /*check if idx is outof range*/
     }
     /*
@@ -135,7 +141,7 @@ node *current, *Next;
 int j;
 j = 0;
 
-if (!*head)
+if (*head == NULL)
 {
     printf("INFO: Nothing to free");
     return;
