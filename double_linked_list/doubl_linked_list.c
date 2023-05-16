@@ -71,7 +71,7 @@ node *insert_node_middle(node **head, int idx, int num)
     /*check if malloc was succesfull*/
     if (list == NULL)
     {
-        printf("ERROR: malloc was unsuccessful");
+        printf("INFO: malloc was unsuccessful");
         return NULL;
     }
     list->n = num;
