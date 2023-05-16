@@ -43,7 +43,6 @@ printf("Enter Index: \n");
 
 scanf("%d", &index);
 
-
 insert_node_middle(&head, index, number);
 
 printf("\nnode with value: %d inserted at Index %d :\n\n", number, index);
