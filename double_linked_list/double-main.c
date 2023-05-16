@@ -9,11 +9,11 @@ number = index = 0;
 head = NULL;
 
 /*Create the default node, to expriment on*/
-create_node(&head, 3); /*create the first node*/
-insert_node_end(&head, 57);
-insert_node_end(&head, 5);
-insert_node_end(&head, 34);
-insert_node_end(&head, 946);
+create_node(&head, 10); /*create the first node*/
+insert_node_end(&head, 100);
+insert_node_end(&head, 1000);
+insert_node_end(&head, 10000);
+insert_node_end(&head, 100000);
 
 
 /*print the initial node with its valus*/
