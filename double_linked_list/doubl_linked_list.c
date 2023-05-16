@@ -163,5 +163,5 @@ while (Next)
     free(current);
     current = Next;
 }
-printf("Success memory freed: %d", j);
+printf("Success memory freed: %d\n\n\n", j);
 }
