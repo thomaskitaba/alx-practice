@@ -1,0 +1,4 @@
+$ strings ./a.out
+$ objdump -d -j .rodata
+$ objdump -d -j .text -M intel ./a.out
+
