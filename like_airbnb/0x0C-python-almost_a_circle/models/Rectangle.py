@@ -81,7 +81,8 @@ b7 = Rectangle(1, 2)
 print("b7: {}".format(b7.id))
 
 b8 = Rectangle(1, 2, 0, 0, 8)
-print("b8: {}".format(b8.id))
+print("w: {}, h:{}, b8 id: {}".format(b8.width, b8.height, b8.id))
+
 
 print("base.__nb_object = {}".format(Base._Base__nb_objects_list))
 print("base.__nb_object = {}".format(Base._Base__nb_objects))
