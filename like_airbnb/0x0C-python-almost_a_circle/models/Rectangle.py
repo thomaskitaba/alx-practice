@@ -24,7 +24,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        return self.__width
+        return self.__height
     @height.setter
     def height(self, value):
         if type(value) != int:
@@ -60,6 +60,18 @@ class Rectangle(Base):
     def area(self):
         return self.__width * self.__height
 
+    def display(self):
+        for row in range(self.y):
+            print ("Y")
+        for row in range(self.height):
+            for x in range(self.x):
+                print("X", end="")
+            for col in range(self.width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 b1 = Rectangle(1, 2)  # 1
 print("b1: {}".format(b1.id))
 b2 = Rectangle(1, 2) # 2
@@ -80,9 +92,11 @@ print("b6: {}".format(b6.id))
 b7 = Rectangle(1, 2)
 print("b7: {}".format(b7.id))
 
-b8 = Rectangle(1, 2, 0, 0, 8)
-print("w: {}, h:{}, b8 id: {}".format(b8.width, b8.height, b8.id))
-
+b8 = Rectangle(5, 5, 4, 4, 8)
 
 print("base.__nb_object = {}".format(Base._Base__nb_objects_list))
 print("base.__nb_object = {}".format(Base._Base__nb_objects))
+print("b8-> w:{}, h:{}, id: {}, area: {}".format(b8.width, b8.height, b8.id, b8.area()))
+
+print(b8)
+b8.display()
