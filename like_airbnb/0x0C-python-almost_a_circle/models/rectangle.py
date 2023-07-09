@@ -10,7 +10,35 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    @property
+    def width(self):
+        return self.__width
+    @width.setter
+    def width(self, value):
+        self.__width = value
 
+
+    @property
+    def height(self):
+        return self.__width
+    @height.setter
+    def height(self, value):
+        self.__height = value
+
+    @property
+    def x(self):
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        self.__x = value
+
+    @property
+    def y(self):
+        return self.__y
+    @y.setter
+    def y(self, value):
+        self.__y = value
 
 b1 = Rectangle(1, 2)  # 1
 print("b1: {}".format(b1.id))
