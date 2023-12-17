@@ -13,6 +13,7 @@ class Rectangle(Base):
     @property
     def width(self):
         return self.__width
+
     @width.setter
     def width(self, value):
         if type(value) != int:
@@ -20,7 +21,6 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-
 
     @property
     def height(self):
@@ -62,16 +62,51 @@ class Rectangle(Base):
 
     def display(self):
         for row in range(self.y):
-            print ("Y")
+            print ("y")
         for row in range(self.height):
             for x in range(self.x):
-                print("X", end="")
+                print("x", end="")
             for col in range(self.width):
                 print("#", end="")
             print()
 
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def update(self, *args):
+        if args and len(args) > 0:  # TODO: task 8. Update #0
+
+            for count, arg in enumerate(args):
+                if count == 0:
+                    if arg is None:
+                        # dont change increment the nb_object value
+                        # inside the base __init__ function
+                        # just update the other attributes
+                        Base._Base__object_update = 1
+                        self.__init__(self.width,
+                                      self.height,
+                                      self.x, self.y, self.id)
+                    else:
+                        self.id = args[count]
+                if count == 1:
+                    self.width = args[count]
+                if count == 2:
+                    self.height = args[count]
+                if count == 3:
+                    self.x = args[count]
+                if count == 4:
+                    self.y = args[count]
+
+
+    def to_dictionary(self):
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+
 b1 = Rectangle(1, 2)  # 1
 print("b1: {}".format(b1.id))
 b2 = Rectangle(1, 2) # 2
@@ -96,7 +131,28 @@ b8 = Rectangle(5, 5, 4, 4, 8)
 
 print("base.__nb_object = {}".format(Base._Base__nb_objects_list))
 print("base.__nb_object = {}".format(Base._Base__nb_objects))
+
+b8.display()
+print("b8 Original:")
 print("b8-> w:{}, h:{}, id: {}, area: {}".format(b8.width, b8.height, b8.id, b8.area()))
 
+
 print(b8)
-b8.display()
+
+args = (None, 4, 4, 2, 2) #if id = None or original id then it wont be changed
+b8.update(*args)   #TODO: update
+print(b8)
+print("---------------------------------------------------------")
+print("Instance to Dictionary")
+print("using __dict__ = {}".format(b8.__dict__))
+print("using to_dictionary function{}".format(b8.to_dictionary()))
+
+print("---------------------------------------------------------")
+print("dictionary to Json")
+dictionary = b8.to_dictionary()
+json_dictionary = Base.to_json_string([dictionary])
+print("[instance to dictiounary] type({}): {}".format(type(dictionary), dictionary))
+print("[to json str] type({}): {}".format(type(json_dictionary), json_dictionary))
+
+print("---------------------------------------------------------")
+print("Json to file")
