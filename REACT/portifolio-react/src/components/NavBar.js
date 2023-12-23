@@ -18,18 +18,13 @@ const NavBar = () => {
         setScrolled(false);
       }
     }
-
     window.addEventListener("scroll", onScroll);
-
     return () => window.removeEventListener("scroll", onScroll);
   }, [])
-
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
   }
-
   return (
-
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
@@ -50,14 +45,11 @@ const NavBar = () => {
                 <a href="#2"><img src={navIcon2} alt="" /></a>
                 <a href="#3"><img src={navIcon3} alt="" /></a>
               </div>
-
                 <button className="vvd"><span>Let’s Connect</span></button>
-
             </span>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
   )
 }
 export default NavBar;
