@@ -1,0 +1,43 @@
+#!/usr/bin/node
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>Document</title>
+    <script>
+      let a = 2;
+      console.log("before Change" + a);
+      function test() {
+        var a = 3;
+        console.log("Inside funciton declared inside a = ;" + a);
+      }
+      test();
+      console.log("after change a = " + a);
+      console.log("-----------array -------------");
+      var my_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      console.log("The arrray " + my_array);
+      var to_be_removed = [];
+      for (let i = 0; i < my_array.length; i++) {
+        if (my_array[i] % 2 == 0) {
+          console.log(my_array[i]);
+        } else {
+          to_be_removed.push(my_array[i]);
+        }
+      }
+      console.log("to_be_removed: " + to_be_removed);
+      console.log(my_array);
+      console.log("pop my_array: " + my_array.pop());
+      console.log(my_array);
+      console.log("shift my_array:" + my_array.shift());
+      console.log(my_array);
+      console.log("shift my_array:" + my_array.unshift(100));
+      console.log(my_array);
+    </script>
+  </head>
+  <body>
+    <h1>Hello Thomas Kitaba</h1>
+  </body>
+</html>

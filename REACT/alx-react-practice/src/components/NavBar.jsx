@@ -33,8 +33,6 @@ function NavBar() {
     </div>
   </div>
 </div>
-
   );
 }
-
 export default NavBar;

@@ -1,5 +1,7 @@
 import { Fragment } from "react";
-
+function Display() {
+  return console.log("hello");
+  }
 function ListGroup() {
   let name_list = [];
   const names = ["Thomas", "Kitaba", "Gebre", "Amanuel", "Tsegay", "Gebremedhin", "Gebrehiwot", "Gebremeskel", "Gebregergis"];
@@ -12,7 +14,7 @@ function ListGroup() {
     <hr />
     </ul>
     <ul>
-      {names.map((name, index) => (<li>name {index + 1}: {name}</li>))}
+      {names.map((n, index) => (<li className="list-group-item" key={n} onClick={Display(n)}>name {index + 1}: {n}</li>))}
     </ul>
   </Fragment>
 }
