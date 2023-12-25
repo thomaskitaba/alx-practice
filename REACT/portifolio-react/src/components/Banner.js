@@ -2,7 +2,7 @@
 import {Container, Row, Col} from "react-bootstrap";
 import {ArrowRightCircle} from "react-bootstrap-icons";
 import headerImg from '../assets/img/king-burger-compressed.png';
-const Banner = () => {
+export const Banner = () => {
     return (
       <section className="banner" id="home">
         <Container>
@@ -21,4 +21,3 @@ const Banner = () => {
       </section>
     )
 }
-export default Banner;
