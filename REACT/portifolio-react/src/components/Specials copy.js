@@ -110,7 +110,7 @@ export const Specials = () => {
                 <img src={Specials[0].imgUrl} alt= "Mondays Specials"/>
                 </Row>
                 <Row>
-                  <Col Col XS={2} md={2} ss={1}>
+                  <Col Col XS={2} md={2}>
                     <div>
                       <p>Specials[0].description</p>
                     </div>

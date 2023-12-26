@@ -289,11 +289,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     0% {
         transform: translateY(-20px);
     }
+    25% {
+      transform: transleX(-20px)
+    }
     50% {
-        transform: translateY(20px);
+      transform: translateY(20px);
+    }
+    75% {
+      transform: translateX(20px);
     }
     100% {
-        transform: translateY(-20px);
+      transform: translateY(-20px);
     }
 }
 .txt-rotate > .wrap {
@@ -360,11 +366,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
   background-color: black;
 }
+.special-header {
+  text-align: center;
+}
 .special h2 {
 	font-size: 45px;
 	font-weight: 700;
   text-align: center;
 }
+
 .special p {
   color: #B8B8B8;
   font-size: 18px;

@@ -7,7 +7,7 @@ import imgThursday from "../assets/img/pizza-2-rectangle.jpg";
 import imgFriday from "../assets/img/pizza-2-rectangle.jpg";
 import imgSaturday from "../assets/img/pizza-2-rectangle.jpg";
 import imgSunday from "../assets/img/pizza-2-rectangle.jpg";
-import colorSharp from "../assets/img/color-sharp.png"
+import colorSharp2 from "../assets/img/color-sharp2.png";
 export const Specials = () => {
   const Specials = [
     {
@@ -27,7 +27,7 @@ export const Specials = () => {
       imgUrl: imgMonday
     },
     {
-      order: "thired",
+      order: "third",
       day: "Wednesday",
       title: "Burger and Brews",
       description: "Elevate your midweek dining experience with our Burger and Brews combo every Wednesday! Savor the perfect harmony of a delectable burger meal along with a complimentary pint of premium craft beer.",
@@ -36,10 +36,10 @@ export const Specials = () => {
     },
     {
       order: "fourth",
-      day: "Thursday",
-      title: "Pizza Party",
-      description: "Join us for a Pizza Party every Thursday evening! Enjoy a 25% discount on our gourmet pizzas post 6 PM. Delight in the symphony of flavors carefully curated in our gourmet pizza selection.",
-      events: "25% off on all gourmet pizzas after 6 PM",
+      day: "Wednesday",
+      title: "Burger Bonanza",
+      description: "Fridays are for our Burger Bonanza! Be the first to relish our weekly debut of innovative burger flavors. Immerse yourself in a burst of creativity and exquisite taste with our latest burger creations!",
+      events: "New burger flavors introduced today!",
       imgUrl: imgMonday
     },
     {
@@ -69,13 +69,22 @@ export const Specials = () => {
   ];
 
   const [todaysDay, setTodaysDay] = useState("Monday");
+  const [dayIndexOrder, setDayIndexOrder] = useState("second");
   useEffect(() => {
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const dayIndexName = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh"];
     const currentDay = new Date();
-    setTodaysDay(days[currentDay.getDay()])
-  }, [todaysDay])
+    const dayIndex = currentDay.getDay();
+    if (dayIndex === 0) {
+      setTodaysDay(days[6])
+      setDayIndexOrder(dayIndexName[6])
+    }
+    else {
+    setTodaysDay(days[dayIndex - 1])
+    setDayIndexOrder(dayIndexName[dayIndex - 1])
 
-
+    }
+  }, [])
 
   return (
     <section className="specials">
@@ -83,59 +92,48 @@ export const Specials = () => {
         <Row>
           <Col>
           <h2>Checkout what is waiting for you</h2>
-          <p>{Specials[0].day}</p>
+          <h2> {dayIndexOrder}: day</h2>
+          <h3>Today is:<span className="special-text">{todaysDay}</span></h3>
+
           {/* defaultActiveKey will be replaced by CURRENT DAY*/}
-
-          <Tab.Container id="specials-tabs" defaultActiveKey={todaysDay}>
-            <Nav variant='pills' defaultActiveKey="/home">
-              <Nav.Item>
-                <Nav.Link eventKey="first">Monday</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-              <Nav.Link eventKey="second">Tuesday</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="third">Wednesday</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="fourth">Thursday</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-              <Nav.Link eventKey="fifth">Friday</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-              <Nav.Link eventKey="sixth">Saturday</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-              <Nav.Link eventKey="seventh">Sunday</Nav.Link>
-              </Nav.Item>
-            </Nav>
-            <Tab.Content>
-              <Tab.Pane eventKey="first">
-                <Row className="align-items-center">
-                <h3>{Specials[0].title}</h3>
-                </Row>
-                <Row>
-                <img src={Specials[0].imgUrl} alt= "Mondays Specials"/>
-                </Row>
-                <Row>
-                  <Col Col XS={2} md={2} ss={1}>
-                    <div>
-                      <p>{Specials[0].description}</p>
-                    </div>
-                    <div>
-                      <p>{Specials[0].events}</p>
-                    </div>
-                  </Col>
-                </Row>
-              </Tab.Pane>
-
-            </Tab.Content>
-          </Tab.Container>
+          <Tab.Container id="specials-tabs" defaultActiveKey={dayIndexOrder}>
+  <Nav variant='pills'>
+    {Specials.map((special, index) => (
+      <Nav.Item key={index}>
+        <Nav.Link eventKey={special.order} active={dayIndexOrder === special.order}>
+          {special.day}
+        </Nav.Link>
+      </Nav.Item>
+    ))}
+  </Nav>
+  <Tab.Content>
+    {Specials.map((special, index) => (
+      <Tab.Pane key={index} eventKey={special.order}>
+        <Row className="align-items-center">
+          <h3>{special.title}</h3>
+        </Row>
+        <Row>
+          <img src={special.imgUrl} alt={`Special for ${special.day}`} />
+        </Row>
+        <Row>
+          <Col>
+            <div>
+              <p>{special.description}</p>
+            </div>
+            <div>
+              <h1 className="special-header">Events of the Day</h1>
+              <p>{special.events}</p>
+            </div>
+          </Col>
+        </Row>
+      </Tab.Pane>
+    ))}
+  </Tab.Content>
+</Tab.Container>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-left" src={colorSharp} alt="Image" />
+      <img className="background-image-right" src={colorSharp2} alt=''></img>
     </section>
   )
 }
