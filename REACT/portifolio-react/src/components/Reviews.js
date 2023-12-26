@@ -38,12 +38,12 @@ export const Reviews = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="review-bx wow zoomIn">
-                        <h2>Reivew</h2>
+                        <h2>Reivews</h2>
                         <p>These are some of our Customers, representing all walk of life.  lets here what they have to say about out burgers.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme review-slider">
+                        <Carousel responsive={responsive} infinite={true}  autoPlay={false} autoPlaySpeed={1000} className="owl-carousel owl-theme review-slider">
                             <div className="item person">
                                 <img src={person1} alt="Image" />
-                                <h5>Abebe A. Burger Enthusiast</h5>
+                                <h5>Chaltu A. Burger Enthusiast</h5>
                                 <p>"I've tried burgers everywhere, but none compare to these! Perfectly grilled patties, fresh veggies, and the softest buns. I'm hooked!"</p>
                             </div>
                             <div className="item person">
@@ -56,7 +56,6 @@ export const Reviews = () => {
                                 <h5>John M. - Happy Customer</h5>
                                 <p>"Absolutely mouthwatering! Juicy, flavorful, and the toppings are always fresh. If you're a burger lover, you've got to taste these!"</p>
                             </div>
-
                         </Carousel>
                     </div>
                 </div>
