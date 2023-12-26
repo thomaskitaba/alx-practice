@@ -1,7 +1,7 @@
 import {Container, Row, Col, Nav, Tab} from 'react-bootstrap';
 import {useState, useEffect} from 'react';
-import imgMonday from "../assets/img/pizza-2-rectangle.jpg";
-import imgTuesday from "../assets/img/pizza-2-rectangle.jpg";
+import imgMonday from "../assets/img/cheeseburger-1.jpg";
+import imgTuesday from "../assets/img/pizza-3-rectangle.jpg";
 import imgWednesday from "../assets/img/pizza-2-rectangle.jpg";
 import imgThursday from "../assets/img/pizza-2-rectangle.jpg";
 import imgFriday from "../assets/img/pizza-2-rectangle.jpg";
@@ -24,7 +24,7 @@ export const Specials = () => {
       title: "Pizza Delight",
       description: "Tuesdays are now about Pizza Delight! Treat yourself to our special offer: Buy one large pizza and receive a small pizza absolutely free. Dive into a symphony of flavors with our handcrafted pizzas.",
       events: "Buy one large pizza, get a small pizza free",
-      imgUrl: imgMonday
+      imgUrl: imgTuesday
     },
     {
       order: "third",
