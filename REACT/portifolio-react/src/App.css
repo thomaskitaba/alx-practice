@@ -464,27 +464,63 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   height: 200px;
   margin: 10px;
 }
-.nav-link#specials-tabs-tab-first, .nav-link#specials-tabs-tab-third,
-.nav-link#specials-tabs-tab-fourth,.nav-link#specials-tabs-tab-fifth,
+.nav-link#specials-tabs-tab-first, .nav-link#specials-tabs-tab-second, .nav-link#specials-tabs-tab-third,
+.nav-link#specials-tabs-tab-fourth,.nav-link#specials-tabs-tab-fifth, .nav-link#specials-tabs-tab-sixth,
 .nav-link#specials-tabs-tab-seventh{
-  background-image: url('./assets/img/burger-monday.jpeg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.nav-link#specials-tabs-tab-first:hover, .nav-link#specials-tabs-tab-second:hover, .nav-link#specials-tabs-tab-third:hover,
+.nav-link#specials-tabs-tab-fourth:hover,.nav-link#specials-tabs-tab-fifth:hover, .nav-link#specials-tabs-tab-sixth:hover,
+.nav-link#specials-tabs-tab-seventh:hover {
+  box-shadow: 2px 2px 5px rgba(255, 0, 0, 1);
+}
+.nav-link#specials-tabs-tab-first
+{
+  background-image: url('./assets/img/burger-monday.jpeg');
 }
 .nav-link#specials-tabs-tab-second
 {
   background-image: url('./assets/img/pizza-tuesday.jpg');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
-
+.nav-link#specials-tabs-tab-third
+{
+  background-image: url('./assets/img/burger-wedensday.jpg');
+}
+.nav-link#specials-tabs-tab-second
+{
+  background-image: url('./assets/img/pizza-tuesday.jpg');
+}
+.nav-link#specials-tabs-tab-second
+{
+  background-image: url('./assets/img/pizza-tuesday.jpg');
+}
 .nav-link#specials-tabs-tab-sixth{
   background-image: url('./assets/img/pizza-saturday.jpg');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+}
+.nav-link#specials-tabs-tab-seventh
+{
+  background-image: url('./assets/img/pizza-tuesday.jpg');
+}
+
+@media (max-width: 767px) {
+  .nav-link#specials-tabs-tab-first, .nav-link#specials-tabs-tab-second, .nav-link#specials-tabs-tab-third,
+.nav-link#specials-tabs-tab-fourth,.nav-link#specials-tabs-tab-fifth, .nav-link#specials-tabs-tab-sixth,
+.nav-link#specials-tabs-tab-seventh
+{
+  display: flex;
+  align-items: center;
+  background: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  width: 150px;
+  height: 100px;
+  margin: 5px;
+  font-size: 1rem;
+  color: black;
+}
 }
 .nav-link
 .proj-imgbx {

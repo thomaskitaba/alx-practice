@@ -1,6 +1,6 @@
 import {Container, Row, Col, Nav, Tab} from 'react-bootstrap';
 import {useState, useEffect} from 'react';
-import imgMonday from "../assets/img/burger-wedensday.jpg";
+import imgMonday from "../assets/img/burger-monday.jpeg";
 import imgTuesday from "../assets/img/pizza-saturday.jpg";
 import imgWednesday from "../assets/img/burger-wedensday.jpg";
 import imgThursday from "../assets/img/burger-wedensday.jpg";
@@ -32,7 +32,7 @@ export const Specials = () => {
       title: "Burger and Brews",
       description: "Elevate your midweek dining experience with our Burger and Brews combo every Wednesday! Savor the perfect harmony of a delectable burger meal along with a complimentary pint of premium craft beer.",
       events: "Burger meal with a free pint of craft beer",
-      imgUrl: imgMonday
+      imgUrl: imgWednesday
     },
     {
       order: "fourth",
@@ -40,7 +40,7 @@ export const Specials = () => {
       title: "Burger Bonanza",
       description: "Fridays are for our Burger Bonanza! Be the first to relish our weekly debut of innovative burger flavors. Immerse yourself in a burst of creativity and exquisite taste with our latest burger creations!",
       events: "New burger flavors introduced today!",
-      imgUrl: imgMonday
+      imgUrl: imgThursday
     },
     {
       order: "fifth",
@@ -48,7 +48,7 @@ export const Specials = () => {
       title: "Burger Bonanza",
       description: "Fridays are for our Burger Bonanza! Be the first to relish our weekly debut of innovative burger flavors. Immerse yourself in a burst of creativity and exquisite taste with our latest burger creations!",
       events: "New burger flavors introduced today!",
-      imgUrl: imgMonday
+      imgUrl: imgFriday
     },
     {
       order: "sixth",
@@ -56,7 +56,7 @@ export const Specials = () => {
       title: "Pizza Feast",
       description: "Saturdays are a Pizza Feast! Dive into an endless array of flavors with our all-you-can-eat pizza buffet priced at just $15 per person. Explore a variety of gourmet pizzas crafted to please every palate!",
       events: "All-you-can-eat pizza buffet for $15 per person",
-      imgUrl: imgMonday
+      imgUrl: imgSaturday
     },
     {
       order: "seventh",
@@ -64,7 +64,7 @@ export const Specials = () => {
       title: "Burger and Shake",
       description: "Sundays are for the whole family with our Burger and Shake meal! Indulge in our family meal deal featuring two delectable burgers and two delightful milkshakes for only $20. Make Sundays memorable with our family-friendly offer!",
       events: "Two burgers and two milkshakes for $20",
-      imgUrl: imgMonday
+      imgUrl: imgSunday
     },
   ];
 
