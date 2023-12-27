@@ -348,7 +348,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 40%;
   z-index: -4;
 }
-
 .person img{
   border-radius: 50%;
 }
@@ -391,6 +390,31 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: rgb(255 255 255 / 10%);
   overflow: hidden;
 }
+.event-description-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+.event-description-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+.event-description-col div {
+  align-self: center;
+
+  width: 100%;
+}
+.event-description-row div {
+  width: 50%;
+  padding: 5px;
+  line-height: 1.5rem;
+}
 .special .nav.nav-pills .nav-item {
   width: 33.33333%;
 }
@@ -425,41 +449,44 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .special .nav.nav-pills .nav-link.active {
     border: 1px solid rgba(255, 255, 255, 1);
 }
-.nav-link#specials-tabs-tab-first {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 55px 0px 0px 55px;
-}
-.nav-link#specials-tabs-tab-second {
+
+.nav-link#specials-tabs-tab-first, .nav-link#specials-tabs-tab-second, .nav-link#specials-tabs-tab-third,
+.nav-link#specials-tabs-tab-fourth,.nav-link#specials-tabs-tab-fifth, .nav-link#specials-tabs-tab-sixth,
+.nav-link#specials-tabs-tab-seventh
+{
+  display: flex;
+  align-items: center;
+  background: white;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  width: 160px;
+  height: 200px;
+  margin: 10px;
 }
-.nav-link#specials-tabs-tab-third {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+.nav-link#specials-tabs-tab-first, .nav-link#specials-tabs-tab-third,
+.nav-link#specials-tabs-tab-fourth,.nav-link#specials-tabs-tab-fifth,
+.nav-link#specials-tabs-tab-seventh{
+  background-image: url('./assets/img/burger-monday.jpeg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-/* Fourth tab */
-.nav-link#specials-tabs-tab-fourth {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+.nav-link#specials-tabs-tab-second
+{
+  background-image: url('./assets/img/pizza-tuesday.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-/* Fifth tab */
-.nav-link#specials-tabs-tab-fifth {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+.nav-link#specials-tabs-tab-sixth{
+  background-image: url('./assets/img/pizza-saturday.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
-/* Sixth tab */
-.nav-link#specials-tabs-tab-sixth {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-/* Seventh tab */
-.nav-link#specials-tabs-tab-seventh {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0 55px 55px 0;
-}
+.nav-link
 .proj-imgbx {
   position: relative;
   border-radius: 30px;

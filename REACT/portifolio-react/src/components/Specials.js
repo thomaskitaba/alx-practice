@@ -1,19 +1,19 @@
 import {Container, Row, Col, Nav, Tab} from 'react-bootstrap';
 import {useState, useEffect} from 'react';
-import imgMonday from "../assets/img/cheeseburger-1.jpg";
-import imgTuesday from "../assets/img/pizza-3-rectangle.jpg";
-import imgWednesday from "../assets/img/pizza-2-rectangle.jpg";
-import imgThursday from "../assets/img/pizza-2-rectangle.jpg";
-import imgFriday from "../assets/img/pizza-2-rectangle.jpg";
-import imgSaturday from "../assets/img/pizza-2-rectangle.jpg";
-import imgSunday from "../assets/img/pizza-2-rectangle.jpg";
+import imgMonday from "../assets/img/burger-wedensday.jpg";
+import imgTuesday from "../assets/img/pizza-saturday.jpg";
+import imgWednesday from "../assets/img/burger-wedensday.jpg";
+import imgThursday from "../assets/img/burger-wedensday.jpg";
+import imgFriday from "../assets/img/pizza-saturday.jpg";
+import imgSaturday from "../assets/img/pizza-saturday.jpg";
+import imgSunday from "../assets/img/pizza-saturday.jpg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 export const Specials = () => {
   const Specials = [
     {
       order: "first",
       day: "Monday",
-      title: "Burger Mania",
+      title: "Burger Mania testtest testteta",
       description: "Kickstart your week with our Burger Mania! Indulge in a culinary delight with 50% off on all our succulent burgers from 5 PM to 8 PM. Experience the perfect blend of premium quality ingredients crafted into mouthwatering burgers.",
       events: "50% off on all burgers from 5 PM to 8 PM",
       imgUrl: imgMonday
@@ -36,7 +36,7 @@ export const Specials = () => {
     },
     {
       order: "fourth",
-      day: "Wednesday",
+      day: "Thursday",
       title: "Burger Bonanza",
       description: "Fridays are for our Burger Bonanza! Be the first to relish our weekly debut of innovative burger flavors. Immerse yourself in a burst of creativity and exquisite taste with our latest burger creations!",
       events: "New burger flavors introduced today!",
@@ -97,39 +97,49 @@ export const Specials = () => {
 
           {/* defaultActiveKey will be replaced by CURRENT DAY*/}
           <Tab.Container id="specials-tabs" defaultActiveKey={dayIndexOrder}>
-  <Nav variant='pills'>
-    {Specials.map((special, index) => (
-      <Nav.Item key={index}>
-        <Nav.Link eventKey={special.order} active={dayIndexOrder === special.order}>
-          {special.day}
-        </Nav.Link>
-      </Nav.Item>
-    ))}
-  </Nav>
-  <Tab.Content>
-    {Specials.map((special, index) => (
-      <Tab.Pane key={index} eventKey={special.order}>
-        <Row className="align-items-center">
-          <h3>{special.title}</h3>
-        </Row>
-        <Row>
-          <img src={special.imgUrl} alt={`Special for ${special.day}`} />
-        </Row>
-        <Row>
-          <Col>
-            <div>
-              <p>{special.description}</p>
-            </div>
-            <div>
-              <h1 className="special-header">Events of the Day</h1>
-              <p>{special.events}</p>
-            </div>
-          </Col>
-        </Row>
-      </Tab.Pane>
-    ))}
-  </Tab.Content>
-</Tab.Container>
+            <Nav variant='pills'>
+              {Specials.map((special, index) => (
+                <Nav.Item key={index} className="special-nav-item">
+                  <Nav.Link eventKey={special.order} active={dayIndexOrder === special.order}>
+                    <div className="event-description-col">
+                      <div>
+                        <h4>{special.day}</h4>
+                      </div>
+
+                      <div>
+                        <h6>{special.title}</h6>
+                      </div>
+                    </div>
+                  </Nav.Link>
+                </Nav.Item>
+              ))}
+            </Nav>
+            <Tab.Content>
+              {Specials.map((special, index) => (
+                <Tab.Pane key={index} eventKey={special.order}>
+                  <Row className="align-items-center">
+                    <h3>{special.title}</h3>
+                  </Row>
+                  <Row>
+                    <img src={special.imgUrl} alt={`Special for ${special.day}`} />
+                  </Row>
+                  <Row>
+                    <Col>
+                      <div className="event-description-row">
+                        <div>
+                          <p>{special.description}</p>
+                        </div>
+                        <div>
+                          <h1 className="special-header">Events of the Day</h1>
+                          <p>{special.events}</p>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                </Tab.Pane>
+              ))}
+            </Tab.Content>
+          </Tab.Container>
           </Col>
         </Row>
       </Container>
