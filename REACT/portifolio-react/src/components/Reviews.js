@@ -39,7 +39,7 @@ export const Reviews = () => {
                 <div className="col-12">
                     <div className="review-bx wow zoomIn">
                         <h2>Reivews</h2>
-                        <p>These are some of our Customers, representing all walk of life.  lets here what they have to say about out burgers.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                        <p>These are some of our Customers, from all walks of life.  lets hear what they have to say about out burgers.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
                         <Carousel responsive={responsive} infinite={true}  autoPlay={false} autoPlaySpeed={1000} className="owl-carousel owl-theme review-slider">
                             <div className="item person">
                                 <img src={person1} alt="Image" />

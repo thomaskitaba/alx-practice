@@ -3,11 +3,12 @@ import {useState, useEffect} from 'react';
 import imgMonday from "../assets/img/burger-monday.jpeg";
 import imgTuesday from "../assets/img/pizza-saturday.jpg";
 import imgWednesday from "../assets/img/burger-wedensday.jpg";
-import imgThursday from "../assets/img/burger-wedensday.jpg";
-import imgFriday from "../assets/img/pizza-saturday.jpg";
+import imgThursday from "../assets/img/burger-thursday.jpg";
+import imgFriday from "../assets/img/burger-friday.jpeg";
 import imgSaturday from "../assets/img/pizza-saturday.jpg";
 import imgSunday from "../assets/img/pizza-saturday.jpg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
+
 export const Specials = () => {
   const Specials = [
     {
@@ -87,7 +88,7 @@ export const Specials = () => {
   }, [])
 
   return (
-    <section className="specials">
+    <section className="specials" id="specials">
       <Container>
         <Row>
           <Col>
@@ -105,7 +106,6 @@ export const Specials = () => {
                       <div>
                         <h4>{special.day}</h4>
                       </div>
-
                       <div>
                         <h6>{special.title}</h6>
                       </div>
@@ -124,17 +124,16 @@ export const Specials = () => {
                     <img src={special.imgUrl} alt={`Special for ${special.day}`} />
                   </Row>
                   <Row>
-                    <Col>
-                      <div className="event-description-row">
-                        <div>
-                          <p>{special.description}</p>
-                        </div>
-                        <div>
-                          <h1 className="special-header">Events of the Day</h1>
-                          <p>{special.events}</p>
-                        </div>
-                      </div>
-                    </Col>
+
+                      <Col className="event-description-row align-items-center">
+
+                        <p>{special.description}</p>
+                      </Col>
+                      <Col classNmae="align-items-center special-header">
+                          <h2 className="special-headerd">Events of the Day</h2>
+                          <h3>{special.events}</h3>
+                      </Col>
+
                   </Row>
                 </Tab.Pane>
               ))}

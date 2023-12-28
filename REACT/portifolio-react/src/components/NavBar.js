@@ -36,14 +36,14 @@ export const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#" className={activeLink === 'Reviews' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('Reviews')}>Reviews</Nav.Link>
-              <Nav.Link href="#Specials" className={activeLink === 'Specials' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('Specials')}>Specials</Nav.Link>
+              <Nav.Link href="#reviews" className={activeLink === 'reviews' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('Reviews')}>Reviews</Nav.Link>
+              <Nav.Link href="#specials" className={activeLink === 'specials' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('Specials')}>Specials</Nav.Link>
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
                 <a href="#1"><img src={navIcon1} alt="" /></a>
                 <a href="#2"><img src={navIcon2} alt="" /></a>
-                <a href="#3"><img src={navIcon3} alt="" /></a>
+                {/* <a href="#3"><img src={navIcon3} alt="" /></a> */}
               </div>
               <button className="vvd"><span>Let’s Connect</span></button>
             </span>

@@ -5,6 +5,7 @@ import { NavBar } from "./components/NavBar";
 import { Banner } from "./components/Banner";
 import { Reviews } from "./components/Reviews";
 import { Specials } from './components/Specials';
+import { Connect } from './components/Connect';
 // import { Projects } from "./components/Projects";
 // import { Contact } from "./components/Contact";
 // import { Footer } from "./components/Footer";
@@ -16,6 +17,7 @@ function App() {
       <Banner />
       <Reviews />
       <Specials />
+      <Connect />
     </div>
   );
 }

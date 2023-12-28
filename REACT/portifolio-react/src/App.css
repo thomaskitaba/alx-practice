@@ -1,3 +1,12 @@
+/* variable properties */
+:root {
+  --bg-primary-verydark:#0F0C07;
+  --bg-primary-dark: #3D2614;
+  --bg-primary-middle: #4f311a;
+  --bg-primary-light: #6C3F18;
+  --bg-primary-light-2: #AA367C;
+  --bg-primary-dark-2: #201357;
+}
 /************ Custom Font ************/
 @font-face {
 	font-family: Centra;
@@ -31,7 +40,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #121212 !important;
+  background-color: var(--bg-primary-verydark) !important;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -114,7 +123,7 @@ span.navbar-text {
     align-items: center;
 }
 .social-icon {
-    display: inline-block;
+    display: flex;
     margin-left: 14px;
 }
 .social-icon a {
@@ -234,16 +243,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
+/* background-image: url('./assets/img/burger-thursday.jpg');
   background-position: top center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  /* background-color: red; */
+  /* background-color:linear-gradient(90.21deg, var(--bg-primary-lig) -5.91%, var(--bg-primary-light) 111.58%); */
 }
 .banner .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+  background: linear-gradient(90.21deg, var(--bg-primary-light) -5.91%, var(--bg-primary-dark) 111.58%);
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 20px;
   margin-bottom: 16px;
@@ -283,21 +294,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: 25px;
 }
 .banner img {
-  animation: updown 7s linear infinite;
+
+  animation: updown 14s linear infinite;
 }
 @keyframes updown {
     0% {
         transform: translateY(-20px);
     }
-    25% {
+    /* 25% {
       transform: transleX(-20px)
-    }
+    } */
     50% {
       transform: translateY(20px);
     }
-    75% {
+    /* 75% {
       transform: translateX(20px);
-    }
+    } */
     100% {
       transform: translateY(-20px);
     }
@@ -312,7 +324,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .review-bx {
-  background: linear-gradient(90.21deg, #5e2748 -5.91%, #201357 111.58%);
+  background: linear-gradient(90.21deg, var(--bg-primary-dark) -5.91%, var(--bg-primary-light) 111.58%);
+
+  --bg-primary-light-2: #
+  --bg-primary-dark-2: #201357;
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
@@ -437,7 +452,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     position: absolute;
     width: 0;
     height: 100%;
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    background-color: linear-gradient(90.21deg, var(--bg-primary-light) -5.91%, var(--bg-primary-dark) 111.58%);
     top: 0;
     left: 0;
     z-index: -1;
@@ -488,13 +503,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 {
   background-image: url('./assets/img/burger-wedensday.jpg');
 }
-.nav-link#specials-tabs-tab-second
+.nav-link#specials-tabs-tab-fourth
 {
-  background-image: url('./assets/img/pizza-tuesday.jpg');
+  background-image: url('./assets/img/burger-thursday.jpg');
 }
-.nav-link#specials-tabs-tab-second
+.nav-link#specials-tabs-tab-fifth
 {
-  background-image: url('./assets/img/pizza-tuesday.jpg');
+  background-image: url('./assets/img/burger-friday.jpeg');
 }
 .nav-link#specials-tabs-tab-sixth{
   background-image: url('./assets/img/pizza-saturday.jpg');
