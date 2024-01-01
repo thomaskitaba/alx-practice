@@ -14,7 +14,7 @@ export const Specials = () => {
     {
       order: "first",
       day: "Monday",
-      title: "Burger Mania testtest testteta",
+      title: "Burger Mania",
       description: "Kickstart your week with our Burger Mania! Indulge in a culinary delight with 50% off on all our succulent burgers from 5 PM to 8 PM. Experience the perfect blend of premium quality ingredients crafted into mouthwatering burgers.",
       events: "50% off on all burgers from 5 PM to 8 PM",
       imgUrl: imgMonday
@@ -93,24 +93,34 @@ export const Specials = () => {
         <Row>
           <Col>
           <h2>Checkout what is waiting for you</h2>
-          <h2> {dayIndexOrder}: day</h2>
-          <h3>Today is:<span className="special-text">{todaysDay}</span></h3>
 
+          <h5>Today is: <span className="special-text">{todaysDay}</span></h5>
           {/* defaultActiveKey will be replaced by CURRENT DAY*/}
           <Tab.Container id="specials-tabs" defaultActiveKey={dayIndexOrder}>
             <Nav variant='pills'>
               {Specials.map((special, index) => (
-                <Nav.Item key={index} className="special-nav-item">
-                  <Nav.Link eventKey={special.order} active={dayIndexOrder === special.order}>
-                    <div className="event-description-col">
-                      <div>
-                        <h4>{special.day}</h4>
+                <Nav.Item key={index}>
+                  <div className="special-nav-item">
+                    <Nav.Link eventKey={special.order} active={dayIndexOrder === special.order}>
+                    <div className="event-description-2">
+                        <div>
+                          <h4>{special.day}</h4>
+                        </div>
+                        <div>
+                          <h6>{special.title}</h6>
+                        </div>
                       </div>
-                      <div>
-                        <h6>{special.title}</h6>
+                    </Nav.Link>
+                    <div className="event-description">
+                        <div>
+                          <h4>{special.day}</h4>
+                        </div>
+                        <div>
+                          <h6>{special.title}</h6>
+                        </div>
                       </div>
-                    </div>
-                  </Nav.Link>
+
+                  </div>
                 </Nav.Item>
               ))}
             </Nav>
@@ -123,17 +133,16 @@ export const Specials = () => {
                   <Row>
                     <img src={special.imgUrl} alt={`Special for ${special.day}`} />
                   </Row>
-                  <Row>
-
-                      <Col className="event-description-row align-items-center">
-
+                  <Row className="event-container">
+                      <Col className="event-container-description align-items-center">
                         <p>{special.description}</p>
                       </Col>
-                      <Col classNmae="align-items-center special-header">
-                          <h2 className="special-headerd">Events of the Day</h2>
-                          <h3>{special.events}</h3>
+                      <Col className="event-container-events align-items-center special-header">
+                          <div>
+                            <h2 className="underline">Events of the Day</h2>
+                            <h3>{special.events}</h3>
+                          </div>
                       </Col>
-
                   </Row>
                 </Tab.Pane>
               ))}

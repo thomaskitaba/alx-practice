@@ -2,15 +2,16 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const https = require("https");
 
-// server used to send send emails
+const sslOptions = {
+  rejectUnauthorized: false // Bypass SSL certificate validation (use with caution)
+};
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
@@ -27,6 +28,7 @@ contactEmail.verify((error) => {
     console.log("Ready to Send");
   }
 });
+
 router.post("/contact", (req, res) => {
   const name = req.body.firstName + req.body.lastName;
   const email = req.body.email;
@@ -48,4 +50,8 @@ router.post("/contact", (req, res) => {
       res.json({ code: 200, status: "Message Sent" });
     }
   });
+});
+
+https.createServer(sslOptions, app).listen(3000, () => {
+  console.log("Server Running on Port 3000");
 });
