@@ -1,9 +1,10 @@
 
 // import MyComponent1 from "./components/component1";
 import ListGroup from "./components/ListGroup";
-import Navbar from "./components/NavBar";
+import Navbar2 from "./components/NavBar2";
 
 function App() {
-  return <h1><ListGroup /> <Navbar /></h1>
+  return <h1><ListGroup />
+  <Navbar2 /></h1>
 }
 export default App;

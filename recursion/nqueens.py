@@ -30,8 +30,6 @@ def nqueens(N):
 			if col == N:
 				return
 
-		col += 1
-
 	backtrack(0)
 
 

@@ -1,3 +1,4 @@
+
 #!/usr/bin/node
 myArray = [ '4', '6', '2', '8', '10'];
 const sorted_array = myArray.sort((a, b) => b - a);
