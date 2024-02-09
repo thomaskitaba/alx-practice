@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const Database =[
+const Database = [
   [
       {
           "postId": 1,
@@ -60,7 +60,7 @@ const Database =[
           "postCommentId": 1,
           "postCommentCreatedDate": "2024-02-08",
           "postCommentUpdatedDate": "2024-02-08",
-          "postCommentId:1": 1,
+          "commentId": 1,
           "commentContent": "This is the first comment with parentId set",
           "commentCreatedDate": "2024-02-08",
           "commentUpdatedDate": "2024-02-08",
@@ -77,7 +77,7 @@ const Database =[
           "postCommentId": 2,
           "postCommentCreatedDate": "2024-02-08",
           "postCommentUpdatedDate": "2024-02-08",
-          "postCommentId:1": 2,
+          "commentId": 3,
           "commentContent": "This is the first comment for post 2",
           "commentCreatedDate": "2024-02-08",
           "commentUpdatedDate": "2024-02-08",
@@ -94,7 +94,7 @@ const Database =[
           "postCommentId": 3,
           "postCommentCreatedDate": "2024-02-08",
           "postCommentUpdatedDate": "2024-02-08",
-          "postCommentId:1": 3,
+          "commentId": 5,
           "commentContent": "This is the first comment for post 3",
           "commentCreatedDate": "2024-02-08",
           "commentUpdatedDate": "2024-02-08",
@@ -111,7 +111,7 @@ const Database =[
           "postCommentId": 4,
           "postCommentCreatedDate": "2024-02-08",
           "postCommentUpdatedDate": "2024-02-08",
-          "postCommentId:1": 4,
+          "commentId": 7,
           "commentContent": "This is the first comment for post 4",
           "commentCreatedDate": "2024-02-08",
           "commentUpdatedDate": "2024-02-08",
@@ -128,7 +128,7 @@ const Database =[
           "postCommentId": 6,
           "postCommentCreatedDate": "2024-02-08",
           "postCommentUpdatedDate": "2024-02-08",
-          "postCommentId:1": 6,
+          "commentId": 11,
           "commentContent": "This is a reply to the first comment for ",
           "commentCreatedDate": "2024-02-08",
           "commentUpdatedDate": "2024-02-08",
@@ -268,11 +268,11 @@ const Database =[
       },
       {
           "commentId": 10,
-          "commentContent": "This is a reply to the first comment for post 5",
+          "commentContent": "This is  a reply to the first comment for post 1",
           "likes": 2,
           "userId": 1,
-          "parentId": 9,
-          "commentStatus": "disabled",
+          "parentId": 1,
+          "commentStatus": "active",
           "commentDescription": null,
           "commentCreatedDate": "2024-02-08",
           "commentCreatedTime": "33:33:33",
@@ -318,7 +318,6 @@ const record = { posts: [] };
 
 const postsTemp = [];
 
-const commentTempList = []
 
 const replyTemp = [];
 // let filteredPostComments = [];
@@ -341,8 +340,8 @@ posts.forEach((post, postIndex) => {
   if (filteredPostComments.length > 0) {
     record.posts[postIndex].comments = filteredPostComments;
     filteredPostComments.forEach((comment) => {
-      const filteredReplies = replies.filter((reply) => reply.parentId === comment.postCommentId);
-      const commentIndex = record.posts[postIndex].comments.findIndex((c) => c.postCommentId === comment.postCommentId);
+      const filteredReplies = replies.filter((reply) => reply.parentId === comment.commenterId);
+      const commentIndex = record.posts[postIndex].comments.findIndex((c) => c.commentId === comment.commentId);
       if (commentIndex !== -1) {
         console.log(`Adding replies to commentIndex ${commentIndex}`);
         if (record.posts[postIndex].comments[commentIndex]) {
@@ -360,4 +359,4 @@ posts.forEach((post, postIndex) => {
   }
 });
 
-console.log(record.posts[2].comments[0]);
+console.log(JSON.stringify(record, null, 2));

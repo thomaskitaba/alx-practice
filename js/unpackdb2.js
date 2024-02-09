@@ -342,20 +342,23 @@ record.posts.forEach((post, index) => {
   const filteredPostComments = postComments.filter((postComments) => postComments.postId === post.postId);
   // console.log(filteredPostComments);
   if (filteredPostComments.length > 0) {
-    postIndex = record.posts.findIndex((post) => post.postId === 1);
+    postIndex = record.posts.findIndex((post) => post.postId === filteredPostComments[0].postId);
     record.posts[postIndex].comments = filteredPostComments;
-
+    // console.log(record.posts[postIndex].comments);
     filteredPostComments.forEach((comment, index) => {
 
-    const filteredReplies = replies.filter((reply, index) => reply.parentId === 1);
-    console.log(filteredReplies);
-    const commentIndex = record.posts[postIndex].comments.findIndex((comment) => comment.commenterId === 1)
-    record.posts[postIndex].comments[commentIndex].replies = filteredReplies;
-    // console.log(record.posts[postIndex].comments[commentIndex].replies);
+      const filteredReplies = replies.filter((reply, index) => reply.parentId === comment.commentId);
+      // console.log(filteredReplies);
+      if (filteredReplies.length >= 0) {
+        const commentIndex = record.posts[postIndex].comments.findIndex((comment) => comment.commenterId === comment.postCommentId);
+        if (commentIndex != -1) {
+          record.posts[postIndex].comments[commentIndex].replies = filteredReplies;
+          console.log(record.posts[postIndex].comments[commentIndex].replies)
+        }
+    }
   })
-
   console.log("-------------------------------");
-  console.log(record.posts[2].comments);
   // console.log(record);
 }
 })
+console.log(record.posts[2].comments);
