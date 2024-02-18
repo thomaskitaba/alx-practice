@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const Database = [
+const database = [
   [
       {
           "postId": 1,
@@ -313,48 +313,24 @@ const Database = [
   ]
 ]
 
-const record = { posts: [] };
-// const commentTempDict = {comments: []};
+const processDatabase = () => {
+  const [myPosts, postComments, replies, metadata] = database;
+  const sortedPosts = myPosts.sort((a, b) => new Date(b.postCreatedDate) - new Date(a.postCreatedDate));
 
-const postsTemp = [];
-const replyTemp = [];
-// let filteredPostComments = [];
-const filteredReplies = [];
-// unpack Database elements to their respective variable
-const [myPosts, postComments, replies, metadata ] = Database;
-
-// sort the
-const posts = myPosts.sort((a, b) => new Date(b.postCreatedDate) - new Date(a.postCreatedDate));
-// Add each posts to record object
-posts.forEach((post, index) => {
-  postsTemp.push(post);
-})
-record.posts = postsTemp;
-// console.log(record);
-
-
-posts.forEach((post, postIndex) => {
-  const filteredPostComments = postComments.filter((comment) => comment.postId === post.postId);
-  if (filteredPostComments.length > 0) {
-    record.posts[postIndex].comments = filteredPostComments;
-    filteredPostComments.forEach((comment) => {
-      const filteredReplies = replies.filter((reply) => reply.parentId === comment.commenterId);
-      const commentIndex = record.posts[postIndex].comments.findIndex((c) => c.commentId === comment.commentId);
-      if (commentIndex !== -1) {
-        // console.log(`Adding replies to commentIndex ${commentIndex}`);
-        if (record.posts[postIndex].comments[commentIndex]) {
-          if (!record.posts[postIndex].comments[commentIndex].replies) {
-            record.posts[postIndex].comments[commentIndex].replies = [];
-          }
-          record.posts[postIndex].comments[commentIndex].replies = filteredReplies;
-        } else {
-          // console.log(`Error: comments[${commentIndex}] is undefined`);
-        }
-      } else {
-        console.log(`Comment with postCommentId ${comment.postCommentId} not found in comments array.`);
-      }
+  const record = { posts: sortedPosts.map(post => {
+    const filteredComments = postComments.filter(comment => comment.postId === post.postId);
+    const commentsWithReplies = filteredComments.map(comment => {
+      const filteredReplies = replies.filter(reply => reply.parentId === comment.commentId);
+      return { ...comment, replies: filteredReplies };
     });
-  }
-});
+    return { ...post, comments: commentsWithReplies };
+  })};
 
+  return record;
+};
+
+// Generate the record object
+const record = processDatabase();
+
+// Log the record object for debugging
 console.log(JSON.stringify(record, null, 2));
